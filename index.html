@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<head>
+	<title>TESTING</title>
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+  	
+</head>
+
+<body>
+
+	<!-- HEADER - IMAGE WITH TEXT OVERLAY -->
+	<header id="main-header">
+		<div class="container">
+			<section class="hero">
+				<div class="container">
+					<div class="brand">
+						<img src="https://www.bart.gov/sites/default/files/images/news/Exterior%203%2025%2014.jpg" class="brand-img img-responsive" data-selector="img" style="outline: none; cursor: inherit;">
+					</div>
+
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div class="someContent" data-selector=".editContent" style="outline: none; cursor: inherit;">
+						<h1>This is a test header</h1>
+					</div>
+
+					<div class="editContent" data-selector=".editContent">
+						<p class="lead">This is some text that I am using as a placeholder</p>
+					</div>
+				</div>
+
+				<div class="col-md-6 col-md-offset-3 text-center">
+					<div class="col-md-6">
+						<a href="#" class="btn btn-info btn-block" data-selector="a.btn, button.btn" style="outline: none; cursor: inherit;">Where are you?</a>
+					</div>
+				
+					<div class="col-md-6">
+						<a href="#" class="btn btn-danger btn-block" data-selector="a.btn, button.btn" style="outline: none; cursor: inherit;">WHere are you headed</a>
+					</div>
+				</div>
+				
+				</div>
+		</section>
+		
+    </header>
+    <!--// END HEADER -->
+	
+	<!-- SERVICE ADVISORIES ID service-advisories -->
+	<div>
+	</div>
+
+	<div class="container">
+		<div class="jumbotron">
+			<h1 class="text-center">WE ARE IMPATIENT</h1>
+	<!-- form area for user selections -->
+		<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title"><strong>Where are you headed?</strong></h3>
+					</div>
+
+					<div class="panel-body">
+						<form>
+								<!-- <label for="timeInput" class="col-2 col-form-label">Click to Enter Departure Time</label> -->
+							<button class="btn btn-primary" id="enter-time">Enter Departure Time (Optional)</button> <!--TODO: add hover event to button that says some variation of "defaults to current time" -->
+						    <div class="col-10">
+						        <input class="form-control" type="text" placeholder="h:mm" id="time-input">
+						    </div>
+					    	<select class="form-control" id="am-pm">
+					    		<option value="">Select AM/PM</option><!-- TODO:change text of "Select AM/PM" to match the placeholder text styling of the text input -->
+					        	<option value="am">AM</option>
+					        	<option value="pm">PM</option>
+					     	</select>
+						<!-- list drop downs will always display on page load -->
+							<select class="form-control" id="origin-list">
+									<!-- station options list will live here -->
+							</select>
+							<select class="form-control" id="destination-list">
+									<!-- station options list will live here -->
+							</select>
+
+							
+							<button type="submit" class="btn btn-primary" id="addTrainBtn">Submit</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- REAL TIME DATA - WILL DISPLAY ALL TRAINS AT ORIGIN STATION ID #real-time-->
+	<h3>ALL TRAINS ARRIVING AT STATION IN REAL TIME WILL GO HERE</h3>
+	<div id="real-time">
+	
+	<!--real time data from JS will append here -->
+	</div>
+
+	<!--SCHEDULE DATA - WILL DISPLAY USERS TRIP PLANS #trip-plan -->
+	<h3>TRIP PLANNER OPTIONS BASED ON USER SELECTIONS WILL GO HERE</h3>
+	<div id="trip-plan">
+	
+	<!--schedule data from JS will append here -->
+	</div>
+
+	<!--YOUTUBE VIDEO #youtube-->
+	<h3>SPACE FOR YOUTUBE</h3>
+	<div id="youtube">
+	
+	<!--youtube video code from JS will append here -->
+	</div>
+
+		<div class="row-fluid">
+		        <main id="content" role="main" class="span12">
+		            <!-- Begin Content -->
+		            <div id="hyv-page-container" style="clear:both;">
+		                <div class="hyv-content-alignment">
+		                    <div id="hyv-page-content" class="" style="overflow:hidden;">
+		                        <div class="container-4">
+		                            <form action="" method="post" name="hyv-yt-search" id="hyv-yt-search">
+		                                <input type="search" name="hyv-search" id="hyv-search" placeholder="Search..." class="ui-autocomplete-input" autocomplete="off">
+		                                <button class="icon" id="hyv-searchBtn"></button>
+		                            </form>
+		                        </div>
+		                        <div>
+		                            <input type="hidden" id="pageToken" value="">
+		                            <div class="btn-group" role="group" aria-label="...">
+		                              <button type="button" id="pageTokenPrev" value="" class="btn btn-default">Prev</button>
+		                              <button type="button" id="pageTokenNext" value="" class="btn btn-default">Next</button>
+		                            </div>
+		                        </div>
+		                        <div id="hyv-watch-content" class="hyv-watch-main-col hyv-card hyv-card-has-padding">
+		                            <ul id="hyv-watch-related" class="hyv-video-list">
+		                            </ul>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </main>
+		    </div>
+
+<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="assets/app.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+ <script
+ src="https://code.jquery.com/jquery-3.2.1.min.js"
+ integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+ crossorigin="anonymous"></script>
+ <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js" type="text/javascript"></script>
+ 
+</body>
+</html>

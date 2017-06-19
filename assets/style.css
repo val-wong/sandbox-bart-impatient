@@ -1,0 +1,10 @@
+
+#real-time,
+#trip-plan {
+	margin-top: 40px;
+}
+
+.etd-train,
+.trip-option {
+	border:1px solid black;
+}
